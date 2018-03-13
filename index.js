@@ -12,9 +12,16 @@ var server = app.listen(4000, function(){
 // Static files
 app.use(express.static('public'));
 
-app.get('/test', function (req, res) {
-    processRunner.runProcess('ls', function() {
-        res.send('Worked')
+
+app.get('/startRecording', function (req, res) {
+    processRunner.runProcessStart(function(result) {
+        res.send(result)
+    })
+})
+
+app.get('/stopRecording', function (req, res) {
+    processRunner.runProcessStop(function() {
+        res.send('Successfully Stopped. . .')
     })
 })
 
