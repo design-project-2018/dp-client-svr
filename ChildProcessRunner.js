@@ -8,11 +8,13 @@ module.exports = {
 
     runProcessStart: function (callback) {
         process = runner.spawn(file, args)
+        console.log('Process started!')
         return callback('Process started!')
     },
 
     runProcessStop: function (callback) {
         process.kill()
+	console.log('Process killed!')
         return callback('Process ended!')
     }
 
