@@ -1,12 +1,11 @@
 const START_COMMAND = 'dir'
 const STOP_COMMAND = 'pwd'
 var child_process = require('child_process')
-// var child_stop = child_process.spawn(STOP_COMMAND)
+var exec = child_process.exec
 
 module.exports = {
 
     runProcessStart: function (callback) {
-        const exec = child_process.exec;
         exec(START_COMMAND, function(err, stdout) {
             console.log(stdout)
             return callback(stdout)
@@ -14,8 +13,6 @@ module.exports = {
     },
 
     runProcessStop: function (callback) {
-
-
         console.log(STOP_COMMAND)
         return callback()
     }
