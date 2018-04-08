@@ -1,19 +1,19 @@
-const START_COMMAND = 'dir'
+const file = '/home/nvidia/Desktop/dp-jetson-alg/dp_jetson_alg'
+const args = ['/home/nvidia/Desktop/dp-jetson-alg/footage.mp4']
 const STOP_COMMAND = 'pwd'
-var child_process = require('child_process')
-var exec = child_process.exec
+var runner = require('child_process')
+var process
 
 module.exports = {
 
     runProcessStart: function (callback) {
-        exec(START_COMMAND, function(err, stdout) {
-            console.log(stdout)
-            return callback(stdout)
-        })
+        process = runner.spawn(file, args)
+        return callback('Process started!')
     },
 
     runProcessStop: function (callback) {
-        console.log(STOP_COMMAND)
-        return callback()
+        process.kill()
+        return callback('Process ended!')
     }
+
 }
