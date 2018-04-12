@@ -1,5 +1,6 @@
 const file = '/home/nvidia/Desktop/dp-jetson-alg/dp_jetson_alg'
 const args = ['/home/nvidia/Desktop/dp-jetson-alg/footage.mp4']
+//const args = ['http://192.168.2.24:8080/video']
 const STOP_COMMAND = 'pwd'
 var runner = require('child_process')
 var process
