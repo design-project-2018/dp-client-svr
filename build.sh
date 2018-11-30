@@ -27,5 +27,10 @@ mkdir build && cd build
 cmake .. && make
 cd ../..
 
+echo -----------------------------------
+echo Building Prediction Model
+echo -----------------------------------
+git clone https://github.com/design-project-2018/dp-ml
+mv dp-ml ml
 
 

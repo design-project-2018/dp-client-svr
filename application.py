@@ -22,7 +22,8 @@ def startStream():
     client = Popen(["./ipc/dp-preprocessor/client"], stdout=PIPE)
 
     # start stream
-    stream = Popen(['./ipc/dp-preprocessor/preprocessor', '/home/nvidia/Downloads/videos/training/positive/000001.mp4'], stdout=PIPE)
+    #stream = Popen(['./ipc/dp-preprocessor/preprocessor', '/home/nvidia/Downloads/videos/training/positive/000001.mp4'], stdout=PIPE)
+    stream = Popen(['./ipc/dp-preprocessor/preprocessor', '/home/nvidia/Downloads/footage.mp4'], stdout=PIPE)
     return jsonify('Streaming')
 
 if __name__ == '__main__':
