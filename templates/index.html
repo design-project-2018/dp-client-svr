@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Driving Assistent</title>
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $('a#socket').bind('click', function() {
+            $.getJSON('/start-socket',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+
+        $(function() {
+          $('a#stream').bind('click', function() {
+            $.getJSON('/start-stream',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+</script>
+
+
+<body id="top">
+    <h1>Smart Dashboard Camera v0.1</h1>
+    <form>
+        <a href=# id=socket><button class='btn btn-default'>Start Web Sockets</button></a>
+        <a href=# id=stream><button class='btn btn-default'>Start Video Stream</button></a>
+    </form>
+</body>
+
+</html>
